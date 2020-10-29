@@ -1,11 +1,10 @@
 let alertNodeCount = 0;
 
-//strAlertType은 'danger 또는 success'
 function showAlert(strContent, strAlertType){
     const nowAlertNode = alertNodeCount;
 
     let html = '';
-    html += `<div class="text-${strAlertType} border-2 border-${strAlertType} rounded relative w-full cursor-pointer my-2 animated fadeInUp alert-node-${alertNodeCount}" onclick="removeAlertNode(${nowAlertNode})" style="max-width: 250px;background-color: ${alertBackgroundColor()}">`;
+    html += `<div class="text-${strAlertType} border-2 border-${strAlertType} rounded relative w-full cursor-pointer my-2 animate__animated animate__fadeInUp alert-node-${alertNodeCount}" onclick="removeAlertNode(${nowAlertNode})" style="max-width: 250px;background-color: ${alertBackgroundColor()}">`;
     html += `<span class="absolute" style="top:5px;right:10px"><i class="icon-line-awesome-close"></i></span>`;
     html += `<div class="py-2 px-4">`;
     html += `<div class="font-bold text-xl">`;
@@ -41,7 +40,7 @@ function showAlert(strContent, strAlertType){
 }
 
 function removeAlertNode(intNowAlertNode){
-    $( `.alert-node-${intNowAlertNode}` ).removeClass('fadeInUp').addClass('fadeOutUp');
+    $( `.alert-node-${intNowAlertNode}` ).removeClass('animate__fadeInUp').addClass('animate__fadeOutUp');
 
     setTimeout(function(){
         $( `.alert-node-${intNowAlertNode}` ).remove();
